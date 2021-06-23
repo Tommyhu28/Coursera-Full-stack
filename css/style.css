@@ -1,3 +1,8 @@
+header {
+    background-color: #a881b8;
+    color: white;
+}
+
 .row-header {
     margin: 0px auto;
     padding: 0px auto;
@@ -8,10 +13,10 @@
     padding: 50px 0px;
     border-bottom: 1px ridge;
     min-height: 400px;
-}
+}   
 
 .footer {
-    background-color: #d1c4E9;
+    background-color: #a881b8;
     margin: 0px auto;
     padding: 20px 0px;
 }
@@ -20,4 +25,22 @@
     font-size: 80%;
     margin: 0px;
     color: #0f0f0f;
+}
+
+.content {
+    margin: 30px auto 90px 6px;
+}
+
+.content .row small {
+    font-size: 70%;
+}
+
+.history {
+    margin-bottom: 40px;
+    padding-bottom: 60px;
+    border-bottom: 1px ridge;
+}
+
+div a {
+    text-decoration-line: none;
 }
