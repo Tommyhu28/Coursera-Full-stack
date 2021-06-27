@@ -3,6 +3,10 @@ body {
     z-index: 0;
 }
 
+h1, h2, h3, h4, h5 {
+    font-weight: 700;
+}
+
 .navbar-dark {
     background-color: #512DA8;
 }
@@ -52,4 +56,29 @@ header {
 
 div a {
     text-decoration-line: none;
+}
+
+#reserveCard {
+    width: 600px;
+    margin: auto;
+}
+
+
+@media (max-width: 600px) {
+    h2#food1 {
+        margin: auto 10px;
+    }
+
+    #reserveCard {
+        width: auto;
+    }
+
+    #reserveRadioBtn {
+        margin: auto 10px;
+    }
+
+    #date {
+        padding-right: 10px;
+    }
+
 }
