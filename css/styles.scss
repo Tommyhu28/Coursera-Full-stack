@@ -1,0 +1,158 @@
+$background-dark: #512DA8;
+$background-light: #a881b8;
+$background-pale: #D1C4E9;
+
+$phone-width: 800px;
+$tablet-width: 1100px;
+$laptop-width: 1600px;
+
+// Height variables
+$carousel-item-height: 300px;
+
+body{
+    padding:50px 0px 0px 0px;
+    z-index:0;
+}
+// DONE
+
+.content {
+    margin: 30px auto 90px 6px;
+    .row {
+        small {
+            font-size: 70%;
+        }
+    }
+}
+
+.navbar-dark {
+    background-color: $background-dark;
+}
+// DONE
+
+header {
+    background-color: $background-light;
+    color: white;
+}
+// DONE
+
+h1, h2, h3, h4, h5 {
+    font-weight: 700;
+}
+// DONE
+
+div {
+    a {
+        text-decoration: none;
+    }
+}
+
+#accordian {
+    
+    .card {
+        width: 50%;
+    }
+}
+
+.history {
+    margin-bottom: 40px;
+    padding-bottom: 60px;
+    border-bottom: 1px ridge;
+}
+
+.btn-group {
+    margin-top: 10px;
+    .label {
+        min-width: 150px;
+    }
+}
+// DONE
+
+@mixin zero-margin($pad-up-dn, $pad-left-right:auto) {
+	margin:0px auto;
+	padding: $pad-up-dn $pad-left-right;
+}
+
+.row-header{
+    @include zero-margin(0px, auto)
+}
+
+.row-content {
+    @include zero-margin(50px,auto);
+    border-bottom: 1px ridge;
+    min-height:400px;
+} 
+// DONE
+
+.footer{
+    background-color: $background-light;
+    margin: 0px auto;
+    padding: 20px 0px;
+}
+// DONE
+
+.jumbotron {
+    @include zero-margin(70px,30px);
+    background: $background-light ;
+    color:floralwhite;
+}
+
+address{
+    font-size:80%;
+    margin:0px;
+    color:#0f0f0f;
+}
+// DONE
+
+.tab-content {
+    border: 1px solid #ddd;
+    border-top: 0px;
+    padding: 10px;
+}
+// DONE
+
+.carousel {
+    .carousel-item {
+        height: $carousel-item-height;
+        img {
+            margin: 100px auto;
+            @media only screen and (max-width: $tablet-width) {
+                margin: 80px auto;
+            }
+            @media only screen and (max-width: $phone-width) {
+                margin: 140px auto;
+            }
+        }
+    }
+}
+// DONE
+
+#carouselButton {
+    right:0px;
+    position: absolute;
+    bottom: 0px;
+    z-index: 1;
+    #cBtn {
+        min-width: 40px;
+        max-width: 60px;
+    }
+}
+// DONE
+
+#date, #time {
+    margin-top: 20px;
+    @media only screen and (max-width: $phone-width) {
+        margin-top: 5px;
+    }
+}
+
+#date {
+    min-width: 170px;
+}
+
+#time {
+    margin-left: 10px;
+    min-width: 130px;
+    @media only screen and (max-width: $phone-width) {
+        margin-left: 0px;
+    }
+}

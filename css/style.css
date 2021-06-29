@@ -2,27 +2,33 @@ body {
     padding-top: 50px;
     z-index: 0;
 }
+/* DONE */
 
 h1, h2, h3, h4, h5 {
     font-weight: 700;
 }
+/* DONE */
 
 .navbar-dark {
     background-color: #512DA8;
 }
+/* DONE */
 
 header {
     background-color: #a881b8;
     color: white;
 }
+/* DONE */
 
 .btn-group {
     margin-top: 10px;
 }
+/* DONE */
 
 .btn-group label {
     min-width: 150px;
 }
+/* DONE */
 
 #carouselBtn {
     right:0px;
@@ -30,43 +36,48 @@ header {
     position: absolute;
     z-index: 1;
 }
+/* DONE */
 
-#cplay, #cpause {
+#cBtn {
     min-width: 40px;
     max-width: 60px;
 }
+/* DONE */
 
 
 #date, #time {
     margin-top: 20px;
 }
+/* DONE */
 
 #date {
     min-width: 170px;
 }
+/* DONE */
 
 #time {
     margin-left: 10px;
     min-width: 130px;
 }
+/* DONE */
 
 
 .carousel-item {
   height: 400px;
 }
+/* DONE */
 
 .carousel-item img {
     margin: 100px auto;
 }
+/* DONE */
 
-#carousel-play, #carousel-pause {
-    max-width: 100px;
-}
 
 .row-header {
     margin: 0px auto;
     padding: 0px auto;
 }
+/* DONE */
 
 .row-content {
     margin: 0px auto;
@@ -74,36 +85,43 @@ header {
     border-bottom: 1px ridge;
     min-height: 400px;
 }   
+/* DONE */
 
 .footer {
     background-color: #a881b8;
     margin: 0px auto;
     padding: 20px 0px;
 }
+/* DONE */
 
 .address {
     font-size: 80%;
     margin: 0px;
     color: #0f0f0f;
 }
+/* DONE */
 
 .content {
     margin: 30px auto 90px 6px;
 }
+/* DONE */
 
 .content .row small {
     font-size: 70%;
 }
+/* DONE */
 
 .history {
     margin-bottom: 40px;
     padding-bottom: 60px;
     border-bottom: 1px ridge;
 }
+/* DONE */
 
 div a {
     text-decoration-line: none;
 }
+/* DONE */
 
 .tab-content {
     border: 1px solid #ddd;
@@ -111,20 +129,21 @@ div a {
     padding: 10px;
 }
 
+/* DONE */
+
 #accordian .card {
     width: 50%;
 }
+/* DONE */
 
 @media (max-width: 1100px) {
     .carousel-item img {
         margin: 80px auto;
     }
 }
+/* DONE? */
 
 @media (max-width: 600px) {
-    h2#food1 {
-        margin: auto 10px;
-    }
 
     .carousel-item img {
         margin: 140px auto;

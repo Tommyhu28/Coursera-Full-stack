@@ -14,15 +14,15 @@
 <body>
     <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#"><img src="/img/logo.png" alt="img" height="30" width="41"></a>
+            <a class="navbar-brand"><img src="/img/logo.png" alt="img" height="30" width="41"></a>
             <button class="navbar-toggler me-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbar">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="/aboutus.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link">Menu</a></li>
                     <li class="nav-item"><a class="nav-link" href="/contactus.html">Contact Us</a></li>
                 </ul>
             </div>
@@ -215,11 +215,8 @@
                     <span class="visually-hidden">Next</span>
                 </button>
                 <div class="btn-group" id="carouselBtn" role="group">
-                    <input type="radio" class="btn-check" name="playoption" autocomplete="off" id="carousel-play">
-                    <label for="carousel-play" class="btn btn-outline-success btn-sm" id="cplay" ><i class="fas fa-play"></i></label>
-                
-                    <input type="radio" class="btn-check" name="pauseoption" autocomplete="off" id="carousel-pause">
-                    <label for="carousel-pause" class="btn btn-outline-danger btn-sm" id="cpause"><i class="fas fa-pause"></i></label>
+                    <input type="radio" class="btn-check" name="pauseoption" autocomplete="off" id="carousel-button">
+                    <label for="carousel-button" class="btn btn-outline-danger btn-sm" id="cBtn"><i class="fas fa-pause"></i></label>
                 </div>
             </div>
 
@@ -357,17 +354,18 @@
             return new bootstrap.Tooltip(tooltipTriggerEl)
         })
     </script>
-        <script>
-            $(document).ready(function(){
-                $("#carouselExampleDark").carousel( { interval: 2000 } );
-                $("#carousel-pause").click(function(){
-                    $("#carouselExampleDark").carousel('pause');
-                });
-                $("#carousel-play").click(function(){
-                    $("#carouselExampleDark").carousel('cycle');
-                });
+    <script>
+        $(document).ready(function(){
+            $("#carouselExampleDark").carousel( { interval: 2000 } );
+            $("#carouselBtn").click(function(){
+                var $btn =  $("#carouselBtn");
+                var $target = $btn.children("label");
+                console.log($target);
+                // var toAdd = ($target.hasClass("fa-play"))? "fa-pause":"fa-play";
+                // $target.removeClass().addClass(["fas",toAdd]);
             });
-        </script>
+        });
+    </script>
 
 
 
