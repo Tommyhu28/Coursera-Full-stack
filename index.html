@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Ristorante Con Fusion</title>
-    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="node_modules/fontawesome-free-5.15.3-web/css/all.css">
+    <link rel="stylesheet" href="node_modules/fontawesome-free-5.15.3-web/js/all.js">
     <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/style.css">
@@ -14,19 +15,57 @@
     <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#"><img src="/img/logo.png" alt="img" height="30" width="41"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
+            <button class="navbar-toggler me-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbar">
-                <ul class="navbar-nav me-auto">
+                <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="/aboutus.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Menu</a></li>
                     <li class="nav-item"><a class="nav-link" href="/contactus.html">Contact Us</a></li>
                 </ul>
             </div>
+            <button type="button" class="btn btn-primary me-md-auto" data-bs-toggle="modal" data-bs-target="#loginModal">
+                <i class="fas fa-sign-in-alt"></i>
+                Log in
+            </button>
         </div>
     </nav>
+    
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="form-row">
+                            <div class="form-group col-sm-4">
+                                    <label class="form-label" for="email">Email address</label>
+                                    <input type="email" class="form-control form-control-sm mr-1" id="loginEmail" placeholder="Enter email">
+                            </div>
+                            <div class="form-group col-sm-4 pt-3">
+                                <label class="form-label" for="password">Password</label>
+                                <input type="password" class="form-control form-control-sm mr-1" id="loginPw" placeholder="Password">
+                            </div>
+                            <div class="col-sm-auto pt-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox">
+                                    <label class="form-check-label"> Remember me</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row pt-3">
+                            <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>        
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <header class="h-100 py-5">
         <div class="container">
@@ -41,14 +80,152 @@
                     <img src="/img/logo.png" alt="img" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm align-self-center">
-                    <a href="#reserveCard"><button type="button" class="btn btn-warning " onclick="">Reserve a Table</button></a>
-                    
+                    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#reserveFormModal">Reserve a Table</button>
                 </div>
 
             </div>
         </div>
     </header>
 
+    <div class="modal fade" id="reserveFormModal" tabindex="-1" aria-labelledby="reserveFormModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="reserveFormModalLabel">Reserve a table</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="reserveForm">
+                        <form action="">
+                            <div class="form-group row">
+                                <label for="guestnum" class="col-md-3 col-form-label" id="guestnum">Number of Guest:</label>
+                                <div class="col-md-6 col pt-2" id="reserveRadioBtn">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                    <label class="form-check-label" for="flexRadioDefault1">1 </label>
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                    <label class="form-check-label" for="flexRadioDefault1">2 </label>
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                                    <label class="form-check-label" for="flexRadioDefault1">3 </label>
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
+                                    <label class="form-check-label" for="flexRadioDefault1">4 </label>
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault5">
+                                    <label class="form-check-label" for="flexRadioDefault1">5 </label>
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault6">
+                                    <label class="form-check-label" for="flexRadioDefault1">6 </label>
+            
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="SmokeChoose" class="col-md-3 col-form-label pt-4">Section:</label>
+                                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                                    <input type="radio" class="btn-check" name="btnradio" id="noSmokeRoom" autocomplete="off" checked>
+                                    <label class="btn btn-outline-success" for="noSmokeRoom"><i class="fas fa-smoking-ban"></i> Non-Smoking</label>
+                                    <input type="radio" class="btn-check btn-danger" name="btnradio" id="smokeRoom" autocomplete="off">
+                                    <label class="btn btn-outline-danger" for="smokeRoom"><i class="fas fa-smoking"></i> Smoking</label>
+                                  </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="Datetime" class="col-md-3 col-form-label pt-4">Date and Time:</label>
+                                <div class="col-7 col-md-4">
+                                    <input type="date" class="form-control" id="date" name="date" placeholder="Date">
+                                    
+                                </div>
+                                <div class="col-7 col-md-3">
+                                    <input type="time" class="form-control" id="time" name="time" placeholder="Time">
+                                </div>
+                            </div>
+                            <div class="form-group row pt-2">
+                                <div class="col-md-10 pt-3">
+                                    <button type="submit" class="btn btn-primary fw-bold">Reserve</button>
+                                </div>
+                            </div>
+                        </form>
+            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row row-content">
+
+            <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="d-flex justify-content-center">
+                            <img src="/img/uthappizza.png" class="d-block" alt="...">
+                        </div>
+
+                        <div class="carousel-caption d-md-block">
+                            <h3>Uthappizza
+                                <span class="badge bg-danger mt-2">HOT</span>
+                                <div class="w-100 d-none"></div>
+                                <span class="badge rounded-pill bg-secondary">$4.99</span> 
+                            </h3>
+                            <p class="d-none d-sm-block">
+                            Featuring mouthwatering combinations with a choice of five different salads, 
+                            six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. 
+                            All for just $19.99 per person.
+                        </p>   
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center">
+                            <img src="/img/buffet.png" class="d-block" alt="...">
+                        </div>
+                        <div class="carousel-caption d-md-block">
+                            <h3>Weekend Grand Buffet
+                            <span class="badge bg-danger mt-2">NEW</span>
+                            </h3>
+                            <p class="d-none d-sm-block">
+                            Featuring mouthwatering combinations with a choice of five different salads, 
+                            six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. 
+                            All for just $19.99 per person.
+                        </p>   
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center">
+                            <img src="/img/alberto.png" class="d-block" alt="...">
+                        </div>
+
+                        <div class="carousel-caption d-md-block">
+                            <h3>Meet our Culinary Specialists</h3>
+                            <p class="d-none d-sm-block">
+                                Award winning three-star Michelin chef with wide International experience having worked 
+                                closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+                <div class="btn-group" id="carouselBtn" role="group">
+                    <input type="radio" class="btn-check" name="playoption" autocomplete="off" id="carousel-play">
+                    <label for="carousel-play" class="btn btn-outline-success btn-sm" id="cplay" ><i class="fas fa-play"></i></label>
+                
+                    <input type="radio" class="btn-check" name="pauseoption" autocomplete="off" id="carousel-pause">
+                    <label for="carousel-pause" class="btn btn-outline-danger btn-sm" id="cpause"><i class="fas fa-pause"></i></label>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
 
     <div class="container">
         <div class="row row-content align-items-center">
@@ -80,7 +257,7 @@
 
 
         <div class="row row-content align-items-center">
-            <div class="col-10 col-md-3">
+            <div class="col-8 col-md-4">
                 <h3 class="fs-1">This Month's Promotions</h3>
             </div>
             <div class="col col-sm order-sm-last">
@@ -129,48 +306,7 @@
         </div>
     </div>
 
-    <div class="row row-content">
-        <div class="card col-sm-8 col-12 border-1 ps-0 pe-0" id="reserveCard">
-            <h3 class="card-header bg-warning text-white ps-4" id="reserveHdr"> Reserve a Table</h3>
-            <form action="">
-                <div class="form-group row pt-2">
-                    <label for="guestnum" class="col-md-3 col-form-label ps-5" id="guestnum">Number of Guest:</label>
-                    <div class="col-md-6 col-5 pt-2 ps-5" id="reserveRadioBtn">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                        <label class="form-check-label" for="flexRadioDefault1">1 </label>
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                        <label class="form-check-label" for="flexRadioDefault1">2 </label>
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
-                        <label class="form-check-label" for="flexRadioDefault1">3 </label>
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
-                        <label class="form-check-label" for="flexRadioDefault1">4 </label>
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault5">
-                        <label class="form-check-label" for="flexRadioDefault1">5 </label>
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault6">
-                        <label class="form-check-label" for="flexRadioDefault1">6 </label>
 
-                    </div>
-                </div>
-                <div class="form-group row pt-3">
-                    <label for="Datetime" class="col-md-3 col-form-label ps-5">Date and Time:</label>
-                    <div class="col-7 col-md-4 pt-md-1 ps-5 ps-md-3">
-                        <input type="date" class="form-control" id="date" name="date" placeholder="Date">
-                        
-                    </div>
-                    <div class="col-7 col-md-3 pt-md-1 ps-5 ps-md-3 pt-3">
-                        <input type="time" class="form-control" id="time" name="time" placeholder="Time">
-                    </div>
-                </div>
-                <div class="form-group row pt-2">
-                    <div class="col-md-10 offset-md-3 ps-md-3 ps-5 py-3">
-                        <button type="submit" class="btn btn-primary fw-bold">Reserve</button>
-                    </div>
-                </div>
-            </form>
-
-        </div>
-
-    </div>
 
     <footer class="footer">
         <div class="container">
@@ -192,17 +328,17 @@
 		              HONG KONG<br>
 		              <i class="fa fa-phone fa-lg"> +852 1234 5678</i> <br>
 		              <i class="fa fa-fax fa-lg"> +852 8765 4321</i> <br>
-		              <i class="fa fa-envelope fa-lg"><a href="mailto:confusion@food.net">confusion@food.net</a></i> 
+		              <i class="fa fa-envelope fa-lg"><a href="mailto:confusion@food.net"> confusion@food.net</a></i> 
 		           </address>
                 </div>
                 <div class="col-12 col-sm-4 align-self-center">
                     <div class="text-center">
-                        <a class="btn btn-social-icon btn-google" href="http://google.com/+"><i class="fa fa-google-plus fa-lg"></i></a>
-                        <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i class="fa fa-facebook fa-lg"></i></a>
-                        <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i class="fa fa-linkedin fa-lg"></i></a>
-                        <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter fa-lg"></i></a>
-                        <a class="btn btn-social-icon btn-google" href="http://youtube.com/"><i class="fa fa-youtube fa-lg"></i></a>
-                        <a class="btn btn-social-icon" href="mailto:"><i class="fa fa-envelope-o fa-lg"></i></a>
+                        <a class="btn btn-social-icon btn-google" href="http://google.com/+"><i class="fab fa-google-plus-g"></i></a>
+                        <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i class="fab fa-facebook-square"></i></a>
+                        <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i class="fab fa-linkedin"></i></a>
+                        <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fab fa-twitter-square"></i></a>
+                        <a class="btn btn-social-icon btn-google" href="http://youtube.com/"><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-social-icon" href="mailto:"><i class="fas fa-envelope-square"></i></a>
                     </div>
                 </div>
            </div>
@@ -214,8 +350,25 @@
         </div>
     </footer>
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
-    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script>
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    </script>
+        <script>
+            $(document).ready(function(){
+                $("#carouselExampleDark").carousel( { interval: 2000 } );
+                $("#carousel-pause").click(function(){
+                    $("#carouselExampleDark").carousel('pause');
+                });
+                $("#carousel-play").click(function(){
+                    $("#carouselExampleDark").carousel('cycle');
+                });
+            });
+        </script>
+
 
 
 </body>
