@@ -5,17 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Ristorante Con Fusion</title>
-    <link rel="stylesheet" href="node_modules/fontawesome-free-5.15.3-web/css/all.css">
-    <link rel="stylesheet" href="node_modules/fontawesome-free-5.15.3-web/js/all.js">
+    <link rel="stylesheet" href="node_modules/fontawesome-free-5.15.3-web/css/all.min.css">
+    <link rel="stylesheet" href="node_modules/fontawesome-free-5.15.3-web/js/all.min.js">
     <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
     <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
         <div class="container">
             <a class="navbar-brand"><img src="/img/logo.png" alt="img" height="30" width="41"></a>
-            <button class="navbar-toggler me-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
+            <button class="navbar-toggler me-auto" type="button" id="navbarCollapseBtn" onclick="toggleNavbar()">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbar">
@@ -26,19 +26,19 @@
                     <li class="nav-item"><a class="nav-link" href="/contactus.html">Contact Us</a></li>
                 </ul>
             </div>
-            <button type="button" class="btn btn-primary me-md-auto" data-bs-toggle="modal" data-bs-target="#loginModal">
+            <button type="button" class="btn btn-primary me-md-auto" id="loginModalBtn" onclick="toggleLoginModal()">
                 <i class="fas fa-sign-in-alt"></i>
                 Log in
             </button>
         </div>
     </nav>
     
-    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true" role="dialog">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="loginModalLabel">Modal title</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h5 class="modal-title" id="loginModalLabel">Log In</h5>
+                    <button type="button" class="btn-close" id="loginModalCloseBtn" aria-label="Close" onclick="toggleLoginModal()"></button>
                 </div>
                 <div class="modal-body">
                     <form action="">
@@ -66,8 +66,8 @@
             </div>
         </div>
     </div>
-
-    <header class="h-100 py-5">
+<!-- jumbotron below -->
+    <header class="h-100 py-5" id="jumbotron">
         <div class="container">
             <div class="row row-header">
                 <div class="col-12 col-sm-6">
@@ -80,7 +80,7 @@
                     <img src="/img/logo.png" alt="img" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm align-self-center">
-                    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#reserveFormModal">Reserve a Table</button>
+                    <button type="button" class="btn btn-warning" id="reserveFormModalBtn" onclick="toggleReserveModal()">Reserve a Table</button>
                 </div>
 
             </div>
@@ -92,7 +92,8 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="reserveFormModalLabel">Reserve a table</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close" id="reserveFormCloseBtn" aria-label="Close" onclick="toggleReserveModal()"></button>
+                    <!-- edit here -->
                 </div>
                 <div class="modal-body">
                     <div id="reserveForm">
@@ -215,8 +216,9 @@
                     <span class="visually-hidden">Next</span>
                 </button>
                 <div class="btn-group" id="carouselBtn" role="group">
-                    <input type="radio" class="btn-check" name="pauseoption" autocomplete="off" id="carousel-button">
-                    <label for="carousel-button" class="btn btn-outline-danger btn-sm" id="cBtn"><i class="fas fa-pause"></i></label>
+                    <button class="btn btn-danger btn-sm" id="carouselButton" onclick="toggleCarouselPlay()">
+                        <i id="carousel-button-icon" class="fa fa-pause"></i>
+                    </button>
                 </div>
             </div>
 
@@ -355,16 +357,32 @@
         })
     </script>
     <script>
-        $(document).ready(function(){
-            $("#carouselExampleDark").carousel( { interval: 2000 } );
-            $("#carouselBtn").click(function(){
-                var $btn =  $("#carouselBtn");
-                var $target = $btn.children("label");
-                console.log($target);
-                // var toAdd = ($target.hasClass("fa-play"))? "fa-pause":"fa-play";
-                // $target.removeClass().addClass(["fas",toAdd]);
-            });
-        });
+        function toggleCarouselPlay() {
+            var $icon = $("#carousel-button-icon");
+            var toAdd;
+            if ($icon.hasClass("fa-play")) {
+                $("#carouselExampleDark").carousel('cycle');
+                toAdd ="fa-pause";
+            }
+            else {
+                $("#carouselExampleDark").carousel('pause');
+                toAdd ="fa-play";
+            }
+            $icon.removeClass().addClass(["fa",toAdd]);
+        }
+
+        function toggleLoginModal() {
+            $("#loginModal").modal("toggle");
+        }
+
+        function toggleReserveModal() {
+            $("#reserveFormModal").modal("toggle");
+        }
+
+        function toggleNavbar() {
+            $("#navbar").collapse('toggle');
+        }
+        
     </script>
 
 
